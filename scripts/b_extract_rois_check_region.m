@@ -12,9 +12,6 @@ subjects =           readtable(paths.masterfile);
 subjects = subjects(find(~contains(subjects.id,excludes)),:);
 
 
-
-% subjects = {'biokurs19-01','biokurs19-02','biokurs19-03','biokurs19-04','biokurs19-05','biokurs19-06','biokurs19-07','biokurs19-08'};
-%subjects = {'pmdd-06','pmdd-07','pmdd-08','pmdd-09','pmdd-11','pmdd-12','pmdd-13'};
 rois_coord = {
 [-19 -2 -21] 
 [19 -2 -21]
@@ -64,8 +61,3 @@ writematrix(coords,fullfile(paths.data,'DCM.ROIs.csv'), 'Delimiter','\t')
 
 
 return
-ve = []; % variance explained & max. parameter
-for i = 1:numel(dcms(:,1))
-    ve = [ve; dcms{i,1}.diagnostics(1) dcms{i,1}.diagnostics(2)];
-end 
-ve
